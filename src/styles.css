@@ -100,7 +100,7 @@
 }
 
 @utility mithila-rule {
-  background-image: url("/patterns/mithila.svg");
+  background-image: url("../public/patterns/mithila.svg");
   background-repeat: repeat-x;
   background-size: 96px 96px;
   background-position: center;
@@ -110,7 +110,7 @@
 @utility grain {
   background-image:
     linear-gradient(180deg, rgb(247 243 236 / 0.4), rgb(247 243 236 / 0.4)),
-    url("/patterns/mithila.svg");
+    url("../public/patterns/mithila.svg");
   background-size: auto, 180px 180px;
 }
 

@@ -7,6 +7,7 @@ import { useUi } from "@/lib/ui-store";
 import { formatINR } from "@/lib/site";
 import { minPrice } from "@/lib/catalog";
 import { Input } from "@/components/ui/input";
+import { asset } from "@/lib/asset";
 
 export function SearchDialog() {
   const panel = useUi((s) => s.panel);
@@ -67,7 +68,7 @@ export function SearchDialog() {
                   onClick={close}
                   className="flex items-center gap-3 rounded-md px-2 py-2 hover:bg-cream"
                 >
-                  <img src={p.images[0]} alt="" className="size-12 rounded object-cover" />
+                  <img src={asset(p.images[0])} alt="" className="size-12 rounded object-cover" />
                   <div className="min-w-0 flex-1">
                     <p className="truncate font-medium">{p.name}</p>
                     <p className="truncate text-xs text-muted">{p.tagline}</p>

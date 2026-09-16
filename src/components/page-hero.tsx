@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { asset } from "@/lib/asset";
 
 export function SectionHeading({
   eyebrow,
@@ -55,7 +56,7 @@ export function PageHero({
     <section className="relative isolate overflow-hidden">
       {image ? (
         <img
-          src={image}
+          src={asset(image)}
           alt=""
           className="absolute inset-0 size-full object-cover"
         />

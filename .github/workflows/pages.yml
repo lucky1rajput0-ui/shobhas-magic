@@ -1,0 +1,61 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Build static shop
+        run: node scripts/with-app-env.mjs vite build
+        env:
+          GITHUB_PAGES: "true"
+      - name: Prepare Pages artifact
+        run: |
+          set -e
+          mkdir -p site
+          if [ -d .output/public ]; then
+            cp -a .output/public/. site/
+          elif [ -d dist ]; then
+            cp -a dist/. site/
+          else
+            echo "No static output found" && ls -la && exit 1
+          fi
+          # SPA fallback for client-side routes
+          if [ -f site/index.html ]; then
+            cp site/index.html site/404.html
+          fi
+          # GitHub Pages/Jekyll would skip _build
+          touch site/.nojekyll
+          find site -maxdepth 3 -type f | head
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

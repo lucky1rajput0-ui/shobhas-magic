@@ -5,7 +5,11 @@ Premium Indian sweets and festive gifting from Kolkata.
 **30 Years of Tradition. Made for the World.**  
 Rooted in Bihar & Uttar Pradesh. Crafted in Kolkata. Made for everyone.
 
-Live shop: browse traditional sweets, festive / wedding / corporate gift boxes, and order on WhatsApp — no account required.
+Live shop: [lucky1rajput0-ui.github.io/shobhas-magic](https://lucky1rajput0-ui.github.io/shobhas-magic/)
+
+Source: [github.com/lucky1rajput0-ui/shobhas-magic](https://github.com/lucky1rajput0-ui/shobhas-magic)
+
+Browse traditional sweets, festive / wedding / corporate gift boxes, and order on WhatsApp — no account required.
 
 ## Shop
 

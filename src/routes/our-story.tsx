@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, SectionHeading } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { pageTitle, SITE } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/our-story")({
   component: StoryPage,
@@ -45,8 +46,8 @@ function StoryPage() {
         </p>
       </article>
       <div className="mx-auto grid max-w-5xl gap-4 px-4 sm:grid-cols-2 sm:px-6">
-        <img src="/images/story-kitchen.jpg" alt="Finishing peda with pistachio" className="rounded-xl object-cover" />
-        <img src="/images/insta-mise.jpg" alt="Ingredients laid out in a Kolkata kitchen" className="rounded-xl object-cover" />
+        <img src={asset("/images/story-kitchen.jpg")} alt="Finishing peda with pistachio" className="rounded-xl object-cover" />
+        <img src={asset("/images/insta-mise.jpg")} alt="Ingredients laid out in a Kolkata kitchen" className="rounded-xl object-cover" />
       </div>
       <section id="heritage" className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
         <SectionHeading

@@ -3,6 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { SiteShell } from "@/components/layout/site-shell";
 import { SITE } from "@/lib/site";
+import { asset } from "@/lib/asset";
 import appCss from "../styles.css?url";
 
 const FONT =
@@ -19,10 +20,10 @@ export const Route = createRootRoute({
       { name: "keywords", content: "Indian traditional sweets, festive gifting, Thekua, Tilkut, Anarsa, Gujiya, Chhath sweets, wedding sweets, corporate gifting, Indian food gifts, authentic regional Indian food, Kolkata" },
     ],
     links: [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", type: "image/svg+xml", href: asset("/favicon.svg") },
       { rel: "stylesheet", href: appCss },
-      { rel: "manifest", href: "/__grok/manifest.webmanifest" },
-      { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
+      { rel: "manifest", href: asset("/__grok/manifest.webmanifest") },
+      { rel: "apple-touch-icon", href: asset("/__grok/icon-180.png") },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: FONT },

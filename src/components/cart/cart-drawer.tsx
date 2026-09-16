@@ -7,6 +7,7 @@ import { formatINR } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { QtySelector } from "@/components/product/qty-selector";
 import { cartOrderMessage, openWhatsApp } from "@/lib/whatsapp";
+import { asset } from "@/lib/asset";
 
 export function CartDrawer() {
   const panel = useUi((s) => s.panel);
@@ -55,7 +56,7 @@ export function CartDrawer() {
                     className="flex gap-3 border-b border-line pb-4"
                   >
                     <img
-                      src={l.product.images[0]}
+                      src={asset(l.product.images[0])}
                       alt=""
                       className="size-20 rounded-md object-cover"
                     />

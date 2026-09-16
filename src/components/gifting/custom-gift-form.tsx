@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { customGiftMessage, openWhatsApp } from "@/lib/whatsapp";
 import { Input, Label, Textarea } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { asset } from "@/lib/asset";
 
 export function CustomGiftForm() {
   return (
@@ -66,9 +67,9 @@ export function CustomGiftForm() {
         </Button>
       </form>
       <div className="mt-12 grid gap-4 sm:grid-cols-3">
-        <GiftLink to="/gifting/festive" title="Festive" img="/images/diwali.jpg" />
-        <GiftLink to="/gifting/wedding" title="Wedding" img="/images/wedding.jpg" />
-        <GiftLink to="/gifting/corporate" title="Corporate" img="/images/corporate.jpg" />
+        <GiftLink to="/gifting/festive" title="Festive" img={asset("/images/diwali.jpg")} />
+        <GiftLink to="/gifting/wedding" title="Wedding" img={asset("/images/wedding.jpg")} />
+        <GiftLink to="/gifting/corporate" title="Corporate" img={asset("/images/corporate.jpg")} />
       </div>
       <p className="mt-8 text-sm text-muted">
         Need a Custom Gift Box?{" "}

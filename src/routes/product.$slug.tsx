@@ -18,6 +18,7 @@ import { QtySelector } from "@/components/product/qty-selector";
 import { VariantPills } from "@/components/product/variant-pills";
 import { ProductGrid } from "@/components/product/product-card";
 import { cartOrderMessage, notifyMessage, openWhatsApp } from "@/lib/whatsapp";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/product/$slug")({
   loader: ({ params }) => {
@@ -95,7 +96,7 @@ function ProductPage() {
         <div>
           <div className="overflow-hidden rounded-xl bg-cream">
             <img
-              src={product.images[photo] ?? product.images[0]}
+              src={asset(product.images[photo] ?? product.images[0])}
               alt={product.name}
               className="aspect-square w-full object-cover"
             />
@@ -112,7 +113,7 @@ function ProductPage() {
                     i === photo && "ring-2 ring-ink",
                   )}
                 >
-                  <img src={src} alt="" className="size-full object-cover" />
+                  <img src={asset(src)} alt="" className="size-full object-cover" />
                 </button>
               ))}
             </div>

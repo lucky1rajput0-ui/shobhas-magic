@@ -10,6 +10,7 @@ import {
   collectionGroups,
 } from "@/lib/catalog";
 import { SITE, pageTitle } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -22,14 +23,14 @@ export const Route = createFileRoute("/")({
 });
 
 const INSTAGRAM = [
-  "/images/thekua.jpg",
-  "/images/tilkut.jpg",
-  "/images/gujiya.jpg",
-  "/images/peda.jpg",
-  "/images/insta-fry.jpg",
-  "/images/insta-table.jpg",
-  "/images/insta-sesame.jpg",
-  "/images/hampers.jpg",
+  asset("/images/thekua.jpg"),
+  asset("/images/tilkut.jpg"),
+  asset("/images/gujiya.jpg"),
+  asset("/images/peda.jpg"),
+  asset("/images/insta-fry.jpg"),
+  asset("/images/insta-table.jpg"),
+  asset("/images/insta-sesame.jpg"),
+  asset("/images/hampers.jpg"),
 ];
 
 const TESTIMONIALS = [
@@ -99,7 +100,7 @@ function Home() {
                 className="group relative isolate overflow-hidden rounded-xl"
               >
                 <img
-                  src={c.image}
+                  src={asset(c.image)}
                   alt=""
                   className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                 />
@@ -129,7 +130,7 @@ function Hero() {
   return (
     <section className="relative isolate min-h-[88vh] overflow-hidden">
       <img
-        src="/images/hero.jpg"
+        src={asset("/images/hero.jpg")}
         alt="Assortment of Indian sweets and festive gift boxes"
         className="absolute inset-0 size-full object-cover"
       />
@@ -216,12 +217,12 @@ function StoryBand() {
     <section className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:py-28">
       <div className="grid grid-cols-2 gap-3">
         <img
-          src="/images/story-hands.jpg"
+          src={asset("/images/story-hands.jpg")}
           alt="Hands pressing a wooden mould into sweet dough"
           className="aspect-3/4 rounded-xl object-cover"
         />
         <img
-          src="/images/story-kitchen.jpg"
+          src={asset("/images/story-kitchen.jpg")}
           alt="Hands finishing milk peda with pistachio"
           className="mt-8 aspect-3/4 rounded-xl object-cover"
         />
@@ -252,7 +253,7 @@ function StoryBand() {
 function Heritage() {
   return (
     <section className="relative isolate overflow-hidden">
-      <img src="/images/heritage.jpg" alt="" className="absolute inset-0 size-full object-cover" />
+      <img src={asset("/images/heritage.jpg")} alt="" className="absolute inset-0 size-full object-cover" />
       <div className="absolute inset-0 bg-ink/70" />
       <div className="relative mx-auto max-w-3xl px-6 py-24 text-center sm:py-32">
         <div className="mithila-rule mx-auto mb-8 h-8 w-40" />
@@ -285,7 +286,7 @@ function GiftingBand() {
           <GiftTile
             title="Festive Boxes"
             text="Beautifully curated assortments for festivals and celebrations."
-            img="/images/gifting-hero.jpg"
+            img={asset("/images/gifting-hero.jpg")}
             to="/gifting/festive"
           />
           <Link
@@ -294,7 +295,7 @@ function GiftingBand() {
             className="group relative isolate min-h-64 overflow-hidden rounded-xl"
           >
             <img
-              src="/images/chhath.jpg"
+              src={asset("/images/chhath.jpg")}
               alt=""
               className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             />
@@ -309,13 +310,13 @@ function GiftingBand() {
           <GiftTile
             title="Wedding Gifting"
             text="Elegant Indian sweets and curated hampers for weddings and family celebrations."
-            img="/images/wedding.jpg"
+            img={asset("/images/wedding.jpg")}
             to="/gifting/wedding"
           />
           <GiftTile
             title="Corporate Gifting"
             text="Premium food hampers designed for clients, employees and business partners."
-            img="/images/corporate.jpg"
+            img={asset("/images/corporate.jpg")}
             to="/gifting/corporate"
           />
         </div>

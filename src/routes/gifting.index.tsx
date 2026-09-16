@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CustomGiftForm } from "@/components/gifting/custom-gift-form";
 import { pageTitle } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/gifting/")({
   component: GiftingHub,
@@ -12,7 +13,7 @@ function GiftingHub() {
     <main>
       <section className="relative isolate min-h-[52vh] overflow-hidden">
         <img
-          src="/images/gifting-hero.jpg"
+          src={asset("/images/gifting-hero.jpg")}
           alt="Festive Indian sweet gift boxes"
           className="absolute inset-0 size-full object-cover"
         />

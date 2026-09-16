@@ -14,6 +14,7 @@ import { QtySelector } from "@/components/product/qty-selector";
 import { VariantPills } from "@/components/product/variant-pills";
 import { notifyMessage, openWhatsApp } from "@/lib/whatsapp";
 import { useUi } from "@/lib/ui-store";
+import { asset } from "@/lib/asset";
 
 export function ProductCard({ product }: { product: Product }) {
   const coming = product.status === "coming-soon";
@@ -48,7 +49,7 @@ export function ProductCard({ product }: { product: Product }) {
       >
         <div className="aspect-4/5 overflow-hidden bg-cream">
           <img
-            src={product.images[0]}
+            src={asset(product.images[0])}
             alt={product.name}
             className="size-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
           />

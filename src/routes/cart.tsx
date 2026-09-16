@@ -4,6 +4,7 @@ import { formatINR, pageTitle } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { QtySelector } from "@/components/product/qty-selector";
 import { cartOrderMessage, openWhatsApp } from "@/lib/whatsapp";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/cart")({
   component: CartPage,
@@ -34,7 +35,7 @@ export function CartPage() {
           <ul className="mt-8 divide-y divide-line">
             {resolved.map((l) => (
               <li key={`${l.productId}-${l.variantId}`} className="flex gap-4 py-5">
-                <img src={l.product.images[0]} alt="" className="size-24 rounded-md object-cover" />
+                <img src={asset(l.product.images[0])} alt="" className="size-24 rounded-md object-cover" />
                 <div className="min-w-0 flex-1">
                   <Link
                     to="/product/$slug"
