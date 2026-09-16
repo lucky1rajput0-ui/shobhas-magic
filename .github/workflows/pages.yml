@@ -23,11 +23,12 @@ jobs:
         with:
           node-version: "22"
           cache: npm
-      - run: npm ci
+      - run: npm install
       - name: Build static shop
-        run: node scripts/with-app-env.mjs vite build
+        run: npx vite build
         env:
           GITHUB_PAGES: "true"
+          VITE_AUTH_ENABLED: "false"
       - name: Prepare Pages artifact
         run: |
           set -e
